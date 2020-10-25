@@ -27,11 +27,7 @@ Game::~Game()
 
 void Game::addScene(Scene* scenePtr)
 {
-	//std::pair < Scene*, sf::String> _pair;
-	//_pair.first = scenePtr;
-	//_pair.second = scenePtr->Name();
-
-	_scenes[scenePtr->Name()] = scenePtr;// .insert((_pair);
+	_scenes[scenePtr->Name()] = scenePtr;
 }
 void Game::moveToScene(sf::String sceneName)
 {
@@ -67,7 +63,8 @@ void Game::processEvents()
 void Game::update()
 {
 	_deltaTime = _clock->restart().asSeconds();
-	_currentScene->run(_deltaTime);
+
+	_currentScene->run(_deltaTime, _window->getSize());
 }
 
 

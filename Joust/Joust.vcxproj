@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FlyLeftState.cpp" />
     <ClCompile Include="FlyRightState.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -171,6 +172,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="defs.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="FlyLeftState.h" />
     <ClInclude Include="FlyRightState.h" />
     <ClInclude Include="Game.h" />

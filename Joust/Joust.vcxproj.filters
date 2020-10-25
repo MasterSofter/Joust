@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\PlayerStates">
-      <UniqueIdentifier>{f6ac1d5a-e361-483a-a1df-0fd21c75d2ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\PlayerStates">
-      <UniqueIdentifier>{f7dd4ce4-8568-46cf-9dcb-db37911a236b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\GameScenes">
       <UniqueIdentifier>{b3b8690b-deaf-4764-a9d5-3b222550116b}</UniqueIdentifier>
     </Filter>
@@ -31,6 +25,24 @@
     <Filter Include="Source Files\GameStates">
       <UniqueIdentifier>{942bda15-bb54-45d2-ab0d-9a355aee64ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{dac85145-1ff0-4f06-bd3f-ad31551671f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Player\PlayerStates">
+      <UniqueIdentifier>{f6ac1d5a-e361-483a-a1df-0fd21c75d2ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player">
+      <UniqueIdentifier>{bd049e28-26fc-4d79-ab70-b83364d16256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Player\PlayerStates">
+      <UniqueIdentifier>{f7dd4ce4-8568-46cf-9dcb-db37911a236b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemy">
+      <UniqueIdentifier>{2d27b55a-2314-4dad-b58c-4edd1f5eab7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enemy">
+      <UniqueIdentifier>{5acb8772-bbbd-4f37-8f89-d444a813d53a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,20 +54,14 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="GoRightState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="GoLeftState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
-    </ClCompile>
-    <ClCompile Include="StateMachine.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files</Filter>
@@ -79,16 +85,25 @@
       <Filter>Source Files\GameScenes</Filter>
     </ClCompile>
     <ClCompile Include="FlyRightState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="FlyLeftState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="IdleLefftState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
     <ClCompile Include="IdleRightState.cpp">
-      <Filter>Source Files\PlayerStates</Filter>
+      <Filter>Source Files\Player\PlayerStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>Source Files\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,20 +113,14 @@
     <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="GoRightState.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="GoLeftState.h">
-      <Filter>Header Files\PlayerStates</Filter>
-    </ClInclude>
-    <ClInclude Include="StateMachine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="defs.h">
       <Filter>Header Files</Filter>
@@ -138,16 +147,25 @@
       <Filter>Header Files\GameScenes</Filter>
     </ClInclude>
     <ClInclude Include="FlyRightState.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="FlyLeftState.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="IdleLeftState.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
     <ClInclude Include="IdleRightState.h">
-      <Filter>Header Files\PlayerStates</Filter>
+      <Filter>Header Files\Player\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Header Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

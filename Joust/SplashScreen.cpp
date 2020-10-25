@@ -16,13 +16,13 @@ void SplashScreen::processEvents()
 
 }
 
-void SplashScreen::update(float deltaTime)
+void SplashScreen::update(float deltaTime, sf::Vector2u windowSize)
 {
 
 }
 
-void SplashScreen::run(float deltaTime)
+void SplashScreen::run(float deltaTime, sf::Vector2u windowSize)
 {
 	processEvents();
-	update(deltaTime);
+	update(deltaTime, windowSize);
 }

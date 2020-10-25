@@ -15,13 +15,13 @@ void MainMenu::processEvents()
 
 }
 
-void MainMenu::update(float deltaTime)
+void MainMenu::update(float deltaTime, sf::Vector2u windowSize)
 {
 
 }
 
-void MainMenu::run(float deltaTime)
+void MainMenu::run(float deltaTime, sf::Vector2u windowSize)
 {
 	processEvents();
-	update(deltaTime);
+	update(deltaTime, windowSize);
 }

@@ -42,7 +42,7 @@ namespace level
 			physics.addGameObject(plat4);
 
 		GameObject* player = new player::Player("../data/textures/enemies.png");
-			player->setPosition(sf::Vector2f(400, 200));
+			player->setPosition(sf::Vector2f(360, 472));
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
 	}
@@ -52,7 +52,7 @@ namespace level
 
 	}
 
-	void Level::update(float deltaTime)
+	void Level::update(float deltaTime, sf::Vector2u windowSize)
 	{
 		if (_currentState == _stateGame)
 		{
@@ -60,6 +60,10 @@ namespace level
 			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
 			{
 				(*it)->Update(deltaTime);
+				if ((*it)->getPosition().x > windowSize.x)
+					(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
+				if ((*it)->getPosition().x < 0)
+					(*it)->setPosition(sf::Vector2f(windowSize.x, (*it)->getPosition().y));
 			}
 			return;
 		}
@@ -70,10 +74,10 @@ namespace level
 		}
 	}
 
-	void Level::run(float deltaTime)
+	void Level::run(float deltaTime, sf::Vector2u windowSize)
 	{
 		processEvents();
-		update(deltaTime);
+		update(deltaTime, windowSize);
 	}
 
 }

@@ -17,8 +17,8 @@ namespace level
 		Level(sf::String name);
 		virtual void		init();
 		virtual void	    processEvents();
-		virtual void	    update(float deltaTime);
-		virtual void		run(float deltaTime);
+		virtual void	    update(float deltaTime, sf::Vector2u windowSize);
+		virtual void		run(float deltaTime, sf::Vector2u windowSize);
 	};
 
 }

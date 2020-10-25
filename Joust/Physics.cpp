@@ -1,9 +1,11 @@
 #include "Physics.h"
 #include<iterator>
 #include<math.h>
+#include<iostream>
 
 void Physics::Update(float deltaTime)
 {
+	setlocale(LC_ALL, "RUSSIAN");
 	for (std::map<GameObject*, sf::Vector2f> ::iterator it = gameobjects.begin(); it != gameobjects.end(); it++)
 	{
 		if (!(it->first->Static) && checkCollisions(it->first) == nullptr)
@@ -21,17 +23,20 @@ void Physics::Update(float deltaTime)
 		else if(!(it->first->Static))
 		{
 			char typeColision = checkCollisionsType(it->first, checkCollisions(it->first));
+
+			
+
 			if (typeColision == COLLISION_TYPE_TOP)
 			{
-				it->first->setVelocity(sf::Vector2f(it->first->getVelocity().x, -it->first->getVelocity().y));
+				it->first->setVelocity(sf::Vector2f(it->first->getVelocity().x, abs(it->first->getVelocity().y)));
 				it->first->Grounded = false;
 			}
 			else
-			if (typeColision == COLLISION_TYPE_BOTTOM && it->first->getVelocity(). y >= 0)
+			if (typeColision == COLLISION_TYPE_BOTTOM && it->first->getVelocity().y >= 0)
 			{
 				it->first->setVelocity(sf::Vector2f(it->first->getVelocity().x, 0));
 				it->first->Grounded = true;			
-			}		
+			}
 
 			sf::Vector2f v = it->first->getVelocity();
 			sf::Vector2f r = it->first->getPosition() + v * deltaTime;
@@ -72,17 +77,19 @@ char Physics::checkCollisionsType(GameObject* gameObj, GameObject* collisionObje
 	double deltaY = collisionObject->getPosition().y - gameObj->getPosition().y;
 	double deltaX = collisionObject->getPosition().x - gameObj->getPosition().x;
 
-
-	if (deltaX >= 0 && !(collisionObject->getPosition().x - collisionObject->rectBounds.getSize().x / 2 < gameObj->getPosition().x < collisionObject->getPosition().x + collisionObject->rectBounds.getSize().x / 2))
-		return COLLISION_TYPE_RIGHT;
-	if (deltaX < 0 && !(collisionObject->getPosition().x - collisionObject->rectBounds.getSize().x / 2 < gameObj->getPosition().x < collisionObject->getPosition().x + collisionObject->rectBounds.getSize().x / 2))
-		return COLLISION_TYPE_LEFT;
-
 	if (deltaY > 0 && (collisionObject->getPosition().x - collisionObject->rectBounds.getSize().x / 2 < gameObj->getPosition().x < collisionObject->getPosition().x + collisionObject->rectBounds.getSize().x / 2))
 		return COLLISION_TYPE_BOTTOM;
 
 	if (deltaY <= 0 && (collisionObject->getPosition().x - collisionObject->rectBounds.getSize().x / 2 < gameObj->getPosition().x < collisionObject->getPosition().x + collisionObject->rectBounds.getSize().x / 2))
 		return	COLLISION_TYPE_TOP;
+
+
+	if (gameObj->getVelocity().x > 0 && gameObj->getVelocity().y < 0)
+		return COLLISION_TYPE_RIGHT;
+	if (gameObj->getVelocity().x < 0 && gameObj->getVelocity().y < 0)
+		return COLLISION_TYPE_LEFT;
+
+	return -1;
 
 
 }

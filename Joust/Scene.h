@@ -16,7 +16,7 @@ public:
 	sf::String			Name();
 	virtual void		init() = 0;
 	virtual void	    processEvents() = 0;
-	virtual void	    update(float deltaTime) = 0;
-	virtual void		run(float deltaTime) = 0;
+	virtual void	    update(float deltaTime, sf::Vector2u windowSize) = 0;
+	virtual void		run(float deltaTime, sf::Vector2u windowSize) = 0;
 };
 

@@ -8,14 +8,12 @@ namespace player
 {
 	Player::Player(sf::String texturePath) : GameObject(texturePath)
 	{
-		//gameObject.setSize(sf::Vector2f(_texture.getSize().x/7, _texture.getSize().y));
-		//rectBounds.setScale(sf::Vector2f(1 / 7.f, 1));
 		rectBounds.setSize(sf::Vector2f(60, 60));
 		rectBounds.setPosition(getPosition());
 ;		animation = Animation(_texture, sf::Vector2u(7, 1), sf::Vector2u(4, 1), 0.1f);;
 
 		stateMachine = new StateMachine(this);
-		stateMachine->currentState = stateMachine->states[STATE_NAME_GORIGHT];
+		stateMachine->currentState = stateMachine->states[STATE_NAME_IDLE_RIGHT];
 		
 		_inputManagerPtr = new InputManager(this);
 		_mass = 160;
