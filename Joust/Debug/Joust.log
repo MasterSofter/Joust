@@ -1,0 +1,91 @@
+﻿  Animation.cpp
+Z:\MyProjects\Joust\Joust\Animation.cpp(22,43): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+Z:\MyProjects\Joust\Joust\Animation.cpp(23,44): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  FlyLeftState.cpp
+  FlyRightState.cpp
+  Game.cpp
+Z:\MyProjects\Joust\Joust\Game.cpp(49,12): warning C4101: 'event': unreferenced local variable
+  GameObject.cpp
+Z:\MyProjects\Joust\Joust\GameObject.cpp(7,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+Z:\MyProjects\Joust\Joust\GameObject.cpp(7,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+Z:\MyProjects\Joust\Joust\GameObject.cpp(8,83): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+Z:\MyProjects\Joust\Joust\GameObject.cpp(8,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+Z:\MyProjects\Joust\Joust\GameObject.cpp(12,83): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+Z:\MyProjects\Joust\Joust\GameObject.cpp(12,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  GoLeftState.cpp
+  GoRightState.cpp
+  IdleLefftState.cpp
+  IdleRightState.cpp
+  InputManager.cpp
+  Level.cpp
+  Main.cpp
+  MainMenu.cpp
+  Physics.cpp
+Z:\MyProjects\Joust\Joust\Physics.cpp(76,5): warning C4804: '<': unsafe use of type 'bool' in operation
+Z:\MyProjects\Joust\Joust\Physics.cpp(78,5): warning C4804: '<': unsafe use of type 'bool' in operation
+Z:\MyProjects\Joust\Joust\Physics.cpp(81,5): warning C4804: '<': unsafe use of type 'bool' in operation
+Z:\MyProjects\Joust\Joust\Physics.cpp(84,5): warning C4804: '<': unsafe use of type 'bool' in operation
+  Player.cpp
+  Scene.cpp
+  SplashScreen.cpp
+  State.cpp
+  StateMachine.cpp
+  Generating Code...
+Z:\MyProjects\Joust\Joust\Physics.cpp(88): warning C4715: 'Physics::checkCollisionsType': not all control paths return a value
+  Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe
