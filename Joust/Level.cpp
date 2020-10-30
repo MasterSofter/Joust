@@ -45,6 +45,12 @@ namespace level
 			player->setPosition(sf::Vector2f(360, 472));
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
+
+		GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png");
+			enemy->setPosition(sf::Vector2f(157, 108));
+			_gameObjects.push_back(enemy);
+			physics.addGameObject(enemy);
+
 	}
 
 	void Level::processEvents()

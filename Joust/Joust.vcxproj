@@ -150,14 +150,20 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="FlyLeftState.cpp" />
-    <ClCompile Include="FlyRightState.cpp" />
+    <ClCompile Include="AI.FlyLeftState.cpp" />
+    <ClCompile Include="AI.FlyRightState.cpp" />
+    <ClCompile Include="AI.GoLeftState.cpp" />
+    <ClCompile Include="AI.GoRightState.cpp" />
+    <ClCompile Include="AI.IdleLeftState.cpp" />
+    <ClCompile Include="AI.IdleRightState.cpp" />
+    <ClCompile Include="player.FlyLeftState.cpp" />
+    <ClCompile Include="player.FlyRightState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GoLeftState.cpp" />
-    <ClCompile Include="GoRightState.cpp" />
-    <ClCompile Include="IdleLefftState.cpp" />
-    <ClCompile Include="IdleRightState.cpp" />
+    <ClCompile Include="player.GoLeftState.cpp" />
+    <ClCompile Include="player.GoRightState.cpp" />
+    <ClCompile Include="player.IdleLefftState.cpp" />
+    <ClCompile Include="player.IdleRightState.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -166,21 +172,29 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
-    <ClCompile Include="State.cpp" />
-    <ClCompile Include="StateMachine.cpp" />
+    <ClCompile Include="player.State.cpp" />
+    <ClCompile Include="player.StateMachine.cpp" />
+    <ClCompile Include="AI.State.cpp" />
+    <ClCompile Include="AI.StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="FlyLeftState.h" />
-    <ClInclude Include="FlyRightState.h" />
+    <ClInclude Include="AI.FlyLeftState.h" />
+    <ClInclude Include="AI.FlyRightState.h" />
+    <ClInclude Include="AI.GoLeftState.h" />
+    <ClInclude Include="AI.GoRightState.h" />
+    <ClInclude Include="AI.IdleLeftState.h" />
+    <ClInclude Include="AI.IdleRightState.h" />
+    <ClInclude Include="player.FlyLeftState.h" />
+    <ClInclude Include="player.FlyRightState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GoLeftState.h" />
-    <ClInclude Include="GoRightState.h" />
-    <ClInclude Include="IdleLeftState.h" />
-    <ClInclude Include="IdleRightState.h" />
+    <ClInclude Include="player.GoLeftState.h" />
+    <ClInclude Include="player.GoRightState.h" />
+    <ClInclude Include="player.IdleLeftState.h" />
+    <ClInclude Include="player.IdleRightState.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="MainMenu.h" />
@@ -188,8 +202,10 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SplashScreen.h" />
-    <ClInclude Include="State.h" />
-    <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="player.State.h" />
+    <ClInclude Include="player.StateMachine.h" />
+    <ClInclude Include="AI.State.h" />
+    <ClInclude Include="AI.StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

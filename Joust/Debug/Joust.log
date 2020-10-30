@@ -1,4 +1,2 @@
-﻿  Physics.cpp
-Z:\MyProjects\Joust\Joust\Physics.cpp(80,5): warning C4804: '<': unsafe use of type 'bool' in operation
-Z:\MyProjects\Joust\Joust\Physics.cpp(83,5): warning C4804: '<': unsafe use of type 'bool' in operation
+﻿  AI.IdleLeftState.cpp
   Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe
