@@ -2,6 +2,9 @@
 #include<SFML/Graphics.hpp>
 #include"GameObject.h"
 #include<list>
+#include "Player.h"
+#include "Enemy.h"
+
 
 class Scene
 {

@@ -8,7 +8,7 @@ public:
 	GameObject(const sf::String texturePath);
 	~GameObject();
 
-	virtual void Update(float deltaTime);
+	virtual void Update(float deltaTime, sf::Vector2u windowSize);
 
 	virtual void setPosition(sf::Vector2f position);
 	sf::Vector2f getPosition();
@@ -38,6 +38,5 @@ protected:
 	float _mass;
 	sf::Vector2f _accelerate = sf::Vector2f(0, 0);
 	sf::Vector2f _velocity = sf::Vector2f(0,0);
-
 };
 

@@ -3,8 +3,9 @@
 
 namespace AI
 {
-	Enemy::Enemy(sf::String texturePath) : GameObject(texturePath)
+	Enemy::Enemy(sf::String texturePath, player::Player* ptr) : GameObject(texturePath)
 	{
+		_player = ptr;
 		rectBounds.setSize(sf::Vector2f(60, 60));
 		rectBounds.setPosition(getPosition());
 		animation = Animation(_texture, sf::Vector2u(7, 1), sf::Vector2u(4, 1), 0.1f);
@@ -16,8 +17,14 @@ namespace AI
 		_accelerate = sf::Vector2f(0, 0);
 	}
 
-	void Enemy::Update(float deltaTime)
+	sf::Vector2f Enemy::playergetPosition()
 	{
+		return _player->getPosition();
+	}
+
+	void Enemy::Update(float deltaTime, sf::Vector2u windowSize)
+	{
+		_windowSize = windowSize;
 		stateMachine->Update(deltaTime);
 	}
 	void Enemy::setPosition(sf::Vector2f position)

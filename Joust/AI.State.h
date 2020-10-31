@@ -7,6 +7,8 @@ namespace AI
 	{
 	protected:
 		State(Enemy* player, sf::String name);
+		float _timeSwitchY = 0;
+		float _timeSwitchX = 0;
 
 	public:
 		virtual ~State() PURE {}

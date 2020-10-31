@@ -14,7 +14,7 @@ GameObject::GameObject(const sf::String texturePath)
 
 GameObject::~GameObject() {};
 
-void GameObject::Update(float deltaTime)
+void GameObject::Update(float deltaTime, sf::Vector2u windowSize)
 {
 
 }

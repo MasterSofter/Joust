@@ -46,7 +46,7 @@ namespace level
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
 
-		GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png");
+			GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png", (player::Player*) player);
 			enemy->setPosition(sf::Vector2f(157, 108));
 			_gameObjects.push_back(enemy);
 			physics.addGameObject(enemy);
@@ -65,7 +65,7 @@ namespace level
 			physics.Update(deltaTime);
 			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
 			{
-				(*it)->Update(deltaTime);
+				(*it)->Update(deltaTime, windowSize);
 				if ((*it)->getPosition().x > windowSize.x)
 					(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
 				if ((*it)->getPosition().x < 0)

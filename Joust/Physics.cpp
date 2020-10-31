@@ -49,11 +49,11 @@ void Physics::Update(float deltaTime)
 
 		if (!(it->first->Static))
 		{
-			if (it->first->getVelocity().x > 360)
-				it->first->setVelocity(sf::Vector2f(360, it->first->getVelocity().y));
+			if (it->first->getVelocity().x > 160)
+				it->first->setVelocity(sf::Vector2f(160, it->first->getVelocity().y));
 
-			if (it->first->getVelocity().x < -360)
-				it->first->setVelocity(sf::Vector2f(-360, it->first->getVelocity().y));
+			if (it->first->getVelocity().x < -160)
+				it->first->setVelocity(sf::Vector2f(-160, it->first->getVelocity().y));
 		}
 		
 	}

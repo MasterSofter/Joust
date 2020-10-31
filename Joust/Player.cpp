@@ -20,7 +20,7 @@ namespace player
 		_accelerate = sf::Vector2f(0, 0);
 	}
 
-	void Player::Update(float deltaTime)
+	void Player::Update(float deltaTime, sf::Vector2u windowSize)
 	{
 		stateMachine->Update(deltaTime);
 	}

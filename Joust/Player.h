@@ -17,7 +17,7 @@ namespace player
 
 		Animation animation;
 		StateMachine* stateMachine;
-		void Update(float deltaTime);
+		void Update(float deltaTime, sf::Vector2u windowSize);
 		virtual void setPosition(sf::Vector2f position);
 	private:
 		sf::IntRect rect;
