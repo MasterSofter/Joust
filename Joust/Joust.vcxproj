@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="player.DeathState.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="AI.FlyLeftState.cpp" />
     <ClCompile Include="AI.FlyRightState.cpp" />
@@ -180,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="player.DeathState.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="AI.FlyLeftState.h" />

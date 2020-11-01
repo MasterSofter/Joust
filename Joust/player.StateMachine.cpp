@@ -11,6 +11,7 @@ namespace player
 		AddState(new GoLeftState(player));
 		AddState(new FlyRightState(player));
 		AddState(new FlyLeftState(player));
+		AddState(new DeathState(player));
 	}
 
 	void StateMachine::AddState(State* state)
@@ -28,6 +29,7 @@ namespace player
 	{
 		currentState = states[stateName];
 		this->player->animation.Working = false;
+		this->player->animationSpawn.Working = false;
 	}
 
 	void StateMachine::Update(float deltaTime)

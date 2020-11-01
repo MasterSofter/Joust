@@ -19,6 +19,16 @@ void GameObject::Update(float deltaTime, sf::Vector2u windowSize)
 
 }
 
+void GameObject::Spawn(sf::Vector2f spawnPos)
+{
+
+}
+
+void GameObject::Kill()
+{
+
+}
+
 void GameObject::setAccelerate(sf::Vector2f accelrate)
 {
 	_accelerate = accelrate;

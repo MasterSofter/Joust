@@ -138,6 +138,9 @@
     <ClCompile Include="player.SpawnState.cpp">
       <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="player.DeathState.cpp">
+      <Filter>Source Files\Player\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -225,6 +228,9 @@
       <Filter>Header Files\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="player.SpawnState.h">
+      <Filter>Header Files\Player\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="player.DeathState.h">
       <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>

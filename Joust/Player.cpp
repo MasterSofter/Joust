@@ -50,6 +50,18 @@ namespace player
 		}
 	}
 
+
+	void Player::Spawn(sf::Vector2f spawnPos)
+	{
+		setPosition(spawnPos);
+		this->stateMachine->moveToState(STATE_NAME_SPAWN);
+	}
+
+	void Player::Kill()
+	{
+		this->stateMachine->moveToState(STATE_NAME_DEATH);
+	}
+
 	void Player::Update(float deltaTime, sf::Vector2u windowSize)
 	{
 		stateMachine->Update(deltaTime);

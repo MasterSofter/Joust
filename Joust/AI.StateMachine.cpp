@@ -27,6 +27,7 @@ namespace AI
 	{
 		currentState = states[stateName];
 		this->enemy->animation.Working = false;
+
 	}
 
 	void StateMachine::Update(float deltaTime)

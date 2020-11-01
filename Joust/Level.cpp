@@ -41,6 +41,9 @@ namespace level
 
 		GameObject* player = new player::Player("../data/textures/enemies.png", "../data/textures/spawn1.png");
 			player->setPosition(sf::Vector2f(360, 472));
+			player->Name = "Player";
+			player->lifes = 5;
+			player->Alive = true;
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
 
@@ -66,6 +69,9 @@ namespace level
 				(*it)->Update(deltaTime, windowSize);
 				if (!(*it)->Static)
 				{
+					if ((*it)->Name == "Player" && !(*it)->Alive)
+						(*it)->Spawn(sf::Vector2f(360, 472));
+
 					if ((*it)->getPosition().x > 800)
 						(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
 					if ((*it)->getPosition().x < 0)

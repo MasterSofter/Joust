@@ -31,5 +31,7 @@ namespace player
 	const sf::String STATE_NAME_FLYRIGHT = "FlyRight";
 	const sf::String STATE_NAME_FLYLEFT = "FlyLeft";
 	const sf::String STATE_NAME_SPAWN = "Spawn";
+	const sf::String STATE_NAME_DEATH = "Death";
+
 
 }

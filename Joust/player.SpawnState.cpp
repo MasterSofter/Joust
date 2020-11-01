@@ -16,6 +16,7 @@ namespace player
 	{
 		if (_playerPtr != nullptr && !_playerPtr->animationSpawn.Working)
 		{
+			_playerPtr->Alive = true;
 			_playerPtr->switchTexture("SpawnTexture");
 			_playerPtr->setVelocity(sf::Vector2f(0, 0));
 			_playerPtr->gameObject.setScale(sf::Vector2f(1 / 6.f, 1));
@@ -23,14 +24,6 @@ namespace player
 			_playerPtr->animationSpawn.setImageCountDrawable(sf::Vector2u(6, 1));
 			_playerPtr->animationSpawn.setSwitchTime(0.24f);
 			_playerPtr->animationSpawn.Working = true;
-			/*
-			_playerPtr->setVelocity(sf::Vector2f(0, _playerPtr->getVelocity().y));
-			_playerPtr->gameObject.setScale(sf::Vector2f(1 / 7.f, 1));
-			_playerPtr->animation.setCurrentImagePos(sf::Vector2u(2, 1));
-			_playerPtr->animation.setImageCountDrawable(sf::Vector2u(1, 1));
-			_playerPtr->animation.setSwitchTime(0.4f);
-			_playerPtr->animation.Working = true;
-			*/
 		}
 
 		if (this->_playerPtr != nullptr)
