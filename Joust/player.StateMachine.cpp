@@ -4,6 +4,7 @@ namespace player
 	StateMachine::StateMachine(Player* p)
 		: player(p)
 	{
+		AddState(new SpawnState(player));
 		AddState(new IdleRightState(player));
 		AddState(new IdleLeftState(player));
 		AddState(new GoRightState(player));

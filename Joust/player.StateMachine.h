@@ -7,6 +7,7 @@
 #include "player.GoLeftState.h"
 #include "player.FlyRightState.h"
 #include "player.FlyLeftState.h"
+#include "player.SpawnState.h"
 #include "InputManager.h"
 
 namespace player

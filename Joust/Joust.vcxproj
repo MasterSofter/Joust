@@ -171,6 +171,7 @@
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="player.SpawnState.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="player.State.cpp" />
     <ClCompile Include="player.StateMachine.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="Physics.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="player.SpawnState.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="player.State.h" />
     <ClInclude Include="player.StateMachine.h" />

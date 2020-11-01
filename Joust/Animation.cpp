@@ -44,6 +44,12 @@ void Animation::Update(sf::Vector2u startPositionImage, float deltaTime)
 
 }
 
+
+sf::Vector2u Animation::getCurrentImagePos()
+{
+	return this->currentImage;
+}
+
 void Animation::setCurrentImagePos(sf::Vector2u pos)
 {
 	this->currentImage = pos;

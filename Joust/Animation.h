@@ -12,7 +12,7 @@ public:
 public:
 	sf::IntRect uvRect;
 	bool Working = false;
-
+	sf::Vector2u getCurrentImagePos();
 	void setCurrentImagePos(sf::Vector2u pos);
 	void setImageCountDrawable(sf::Vector2u count);
 	void setSwitchTime(float time);

@@ -1,5 +1,2 @@
-﻿  Game.cpp
-Z:\MyProjects\Joust\Joust\Game.cpp(45,12): warning C4101: 'event': unreferenced local variable
-  Level.cpp
-  Generating Code...
+﻿  player.SpawnState.cpp
   Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe

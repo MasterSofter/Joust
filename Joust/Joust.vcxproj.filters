@@ -135,6 +135,9 @@
     <ClCompile Include="AI.StateMachine.cpp">
       <Filter>Source Files\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="player.SpawnState.cpp">
+      <Filter>Source Files\Player\PlayerStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -220,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="AI.StateMachine.h">
       <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="player.SpawnState.h">
+      <Filter>Header Files\Player\PlayerStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

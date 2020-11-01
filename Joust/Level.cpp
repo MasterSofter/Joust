@@ -39,7 +39,7 @@ namespace level
 			_gameObjects.push_back(plat4);
 			physics.addGameObject(plat4);
 
-		GameObject* player = new player::Player("../data/textures/enemies.png");
+		GameObject* player = new player::Player("../data/textures/enemies.png", "../data/textures/spawn1.png");
 			player->setPosition(sf::Vector2f(360, 472));
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);

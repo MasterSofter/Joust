@@ -16,6 +16,7 @@ namespace player
 	{
 		if (_playerPtr != nullptr && !_playerPtr->animation.Working)
 		{
+			_playerPtr->switchTexture("PlayerTexture");
 			_playerPtr->setVelocity(sf::Vector2f(0, _playerPtr->getVelocity().y));
 			_playerPtr->gameObject.setScale(sf::Vector2f(1 / 7.f, 1));
 			_playerPtr->animation.setCurrentImagePos(sf::Vector2u(2, 1));
