@@ -3,7 +3,7 @@
 
 Game::Game()
 {
-	_window = new sf::RenderWindow(sf::VideoMode(800, 600), "Title");
+	_window = new sf::RenderWindow(sf::VideoMode(800, 600), "Joust");
 	_event =  new sf::Event();
 	_clock =  new sf::Clock();
 

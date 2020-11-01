@@ -1,5 +1,5 @@
-﻿  AI.FlyLeftState.cpp
-  AI.FlyRightState.cpp
+﻿  Game.cpp
+Z:\MyProjects\Joust\Joust\Game.cpp(45,12): warning C4101: 'event': unreferenced local variable
+  Level.cpp
   Generating Code...
-  LINK : Z:\MyProjects\Joust\Debug\Joust.exe not found or not built by the last incremental link; performing full link
   Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe

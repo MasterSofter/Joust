@@ -2,8 +2,6 @@
 #include"iterator"
 namespace level
 {
-
-
 	Level::Level(sf::String name) :Scene(name)
 	{
 		_currentState = _stateGame;
@@ -66,10 +64,14 @@ namespace level
 			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
 			{
 				(*it)->Update(deltaTime, windowSize);
-				if ((*it)->getPosition().x > windowSize.x)
-					(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
-				if ((*it)->getPosition().x < 0)
-					(*it)->setPosition(sf::Vector2f(windowSize.x, (*it)->getPosition().y));
+				if (!(*it)->Static)
+				{
+					if ((*it)->getPosition().x > 800)
+						(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
+					if ((*it)->getPosition().x < 0)
+						(*it)->setPosition(sf::Vector2f(800, (*it)->getPosition().y));
+				}
+				
 			}
 			return;
 		}
