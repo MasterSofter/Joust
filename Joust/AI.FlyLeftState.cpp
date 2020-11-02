@@ -74,8 +74,8 @@ namespace AI
 			_enemyPtr->animation.Update(sf::Vector2u(6, 1), deltaTime);
 			_enemyPtr->gameObject.setTextureRect(_enemyPtr->animation.uvRect);
 
-			_timeSwitchY += 0.002f;
-			_timeSwitchX += 0.0005f;
+			_timeSwitchY += 0.003f;
+			_timeSwitchX += 0.001f;
 		}
 
 		}

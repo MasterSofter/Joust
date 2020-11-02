@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Enemy\EnemyStates">
       <UniqueIdentifier>{9d8f2c63-9716-42ae-acfe-13f16e78b0ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\LevelStates">
+      <UniqueIdentifier>{a142c244-18ed-4b6c-90e9-fb361a215446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\LevelStates">
+      <UniqueIdentifier>{0812045f-448c-413e-84e0-15b8956646b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -141,6 +147,18 @@
     <ClCompile Include="player.DeathState.cpp">
       <Filter>Source Files\Player\PlayerStates</Filter>
     </ClCompile>
+    <ClCompile Include="level.State.cpp">
+      <Filter>Source Files\GameStates\LevelStates</Filter>
+    </ClCompile>
+    <ClCompile Include="level.GameState.cpp">
+      <Filter>Source Files\GameStates\LevelStates</Filter>
+    </ClCompile>
+    <ClCompile Include="level.PauseState.cpp">
+      <Filter>Source Files\GameStates\LevelStates</Filter>
+    </ClCompile>
+    <ClCompile Include="level.StateMachine.cpp">
+      <Filter>Source Files\GameStates\LevelStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -232,6 +250,18 @@
     </ClInclude>
     <ClInclude Include="player.DeathState.h">
       <Filter>Header Files\Player\PlayerStates</Filter>
+    </ClInclude>
+    <ClInclude Include="level.State.h">
+      <Filter>Header Files\GameStates\LevelStates</Filter>
+    </ClInclude>
+    <ClInclude Include="level.GameState.h">
+      <Filter>Header Files\GameStates\LevelStates</Filter>
+    </ClInclude>
+    <ClInclude Include="level.PauseState.h">
+      <Filter>Header Files\GameStates\LevelStates</Filter>
+    </ClInclude>
+    <ClInclude Include="level.StateMachine.h">
+      <Filter>Header Files\GameStates\LevelStates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

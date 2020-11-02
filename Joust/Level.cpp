@@ -1,10 +1,12 @@
 #include "Level.h"
 #include"iterator"
+#include "level.StateMachine.h"
 namespace level
 {
 	Level::Level(sf::String name) :Scene(name)
 	{
-		_currentState = _stateGame;
+		stateMachine = new StateMachine(this);
+		stateMachine->currentState = stateMachine->states[STATE_NAME_GAME];
 	}
 
 	void Level::init()
@@ -47,11 +49,44 @@ namespace level
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
 
-			GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png", (player::Player*) player);
+		GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png", (player::Player*) player);
 			enemy->setPosition(sf::Vector2f(157, 108));
+			enemy->Name = "Enemy";
 			_gameObjects.push_back(enemy);
 			physics.addGameObject(enemy);
 
+		GameObject* menu = new GameObject("../data/textures/menu.png");
+			menu->Static = true;
+			menu->Name = "Menu";
+			menu->setPosition(sf::Vector2f(-800/2.f, -600 /2.f));
+			menu->gameObject.setScale(sf::Vector2f(12, 12));
+			_gameObjects.push_back(menu);
+			menuPtr = menu;
+
+		GameObject* kursorMenu = new GameObject("../data/textures/kursor.png");
+			kursorMenu->Static = true;
+			kursorMenu->Name = "Kursor";
+			kursorMenu->setPosition(sf::Vector2f(-100, -100));
+			kursorMenu->gameObject.setScale(sf::Vector2f(1.2f, 1.2f));
+			_gameObjects.push_back(kursorMenu);
+			kursormenuPtr = kursorMenu;
+		
+		_font.loadFromFile("../data/fonts/ARCADECLASSIC.ttf");
+		sf::Text* textResume = new sf::Text("Resume", _font);
+			textResume->setCharacterSize(34);
+			textResume->setStyle(sf::Text::Bold);
+			textResume->setFillColor(sf::Color(160, 160, 160));
+			textResume->setPosition(sf::Vector2f(-100,-100));
+			_texts.push_back(textResume);
+			textResumePtr = textResume;
+
+		sf::Text* textExit = new sf::Text("Exit", _font);
+			textExit->setCharacterSize(34);
+			textExit->setStyle(sf::Text::Bold);
+			textExit->setFillColor(sf::Color(160, 160, 160));
+			textExit->setPosition(sf::Vector2f(-100, -100));
+			_texts.push_back(textExit);
+			textExitPtr = textExit;
 	}
 
 	void Level::processEvents()
@@ -59,33 +94,24 @@ namespace level
 
 	}
 
+
+	void Level::render(sf::RenderWindow* wnd)
+	{
+		wnd->clear();
+		for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
+			wnd->draw((*it)->gameObject);
+
+		wnd->draw(*textResumePtr);
+		wnd->draw(*textExitPtr);
+
+		wnd->display();
+
+	}
+
+
 	void Level::update(float deltaTime, sf::Vector2u windowSize)
 	{
-		if (_currentState == _stateGame)
-		{
-			physics.Update(deltaTime);
-			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
-			{
-				(*it)->Update(deltaTime, windowSize);
-				if (!(*it)->Static)
-				{
-					if ((*it)->Name == "Player" && !(*it)->Alive)
-						(*it)->Spawn(sf::Vector2f(360, 472));
-
-					if ((*it)->getPosition().x > 800)
-						(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));
-					if ((*it)->getPosition().x < 0)
-						(*it)->setPosition(sf::Vector2f(800, (*it)->getPosition().y));
-				}
-				
-			}
-			return;
-		}
-
-		if (_currentState == _statePause)
-		{
-			return;
-		}
+		this->stateMachine->Update(deltaTime);
 	}
 
 	void Level::run(float deltaTime, sf::Vector2u windowSize)

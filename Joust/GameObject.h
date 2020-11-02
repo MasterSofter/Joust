@@ -24,17 +24,19 @@ public:
 	void				setMass(float mass);
 	float				getMass();
 
-	bool Static = false;
-	bool Grounded = false;
-	bool Alive = true;
-	int lifes = 1;
-	sf::String Name = "";
+	
 
 
 
 public:
-	sf::RectangleShape gameObject;
-	sf::RectangleShape rectBounds;
+	bool				Static = false;
+	bool				Grounded = false;
+	bool				Alive = true;
+	int					lifes = 1;
+	sf::String			Name = "";
+	sf::RectangleShape  gameObject;
+	sf::RectangleShape  rectBounds;
+	sf::Text			text;
 
 protected:
 	sf::Texture _texture;

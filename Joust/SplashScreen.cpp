@@ -16,6 +16,13 @@ void SplashScreen::processEvents()
 
 }
 
+
+void SplashScreen::render(sf::RenderWindow* wnd)
+{
+
+}
+
+
 void SplashScreen::update(float deltaTime, sf::Vector2u windowSize)
 {
 

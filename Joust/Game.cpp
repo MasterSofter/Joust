@@ -70,15 +70,7 @@ void Game::update()
 
 void Game::render()
 {
-	_window->clear();
-	for (auto it = _currentScene->_gameObjects.begin(); it != _currentScene->_gameObjects.end(); it++)
-	{
-		_window->draw((*it)->gameObject);
-	}
-
-	
-
-	_window->display();
+	_currentScene->render(_window);
 }
 
 void Game::run()

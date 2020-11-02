@@ -149,6 +149,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="level.GameState.cpp" />
+    <ClCompile Include="level.PauseState.cpp" />
     <ClCompile Include="player.DeathState.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="AI.FlyLeftState.cpp" />
@@ -178,9 +180,13 @@
     <ClCompile Include="player.StateMachine.cpp" />
     <ClCompile Include="AI.State.cpp" />
     <ClCompile Include="AI.StateMachine.cpp" />
+    <ClCompile Include="level.State.cpp" />
+    <ClCompile Include="level.StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="level.GameState.h" />
+    <ClInclude Include="level.PauseState.h" />
     <ClInclude Include="player.DeathState.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="Enemy.h" />
@@ -210,6 +216,8 @@
     <ClInclude Include="player.StateMachine.h" />
     <ClInclude Include="AI.State.h" />
     <ClInclude Include="AI.StateMachine.h" />
+    <ClInclude Include="level.State.h" />
+    <ClInclude Include="level.StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

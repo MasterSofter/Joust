@@ -9,3 +9,7 @@ sf::String Scene::Name()
 {
 	return _name;
 }
+void Scene::render(sf::RenderWindow* wnd)
+{
+
+}
