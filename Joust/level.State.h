@@ -5,7 +5,7 @@ namespace level
 	class State
 	{
 	protected:
-		State(Level* player, sf::String name);
+		State(Level* level, sf::String name);
 
 
 	public:
@@ -24,5 +24,8 @@ namespace level
 
 	const sf::String STATE_NAME_GAME = "Game";
 	const sf::String STATE_NAME_PAUSE = "Pause";
+	const sf::String STATE_NAME_EXIT = "Exit";
+
+
 }
 

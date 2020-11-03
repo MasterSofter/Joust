@@ -3,6 +3,7 @@
 #include "Level.h"
 #include "level.GameState.h"
 #include "level.PauseState.h"
+#include "level.ExitState.h"
 namespace level
 {
 	class StateMachine

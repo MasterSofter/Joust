@@ -3,7 +3,7 @@
 #include "level.StateMachine.h"
 namespace level
 {
-	Level::Level(sf::String name) :Scene(name)
+	Level::Level(sf::String name) : Scene(name)
 	{
 		stateMachine = new StateMachine(this);
 		stateMachine->currentState = stateMachine->states[STATE_NAME_GAME];
@@ -98,14 +98,16 @@ namespace level
 	void Level::render(sf::RenderWindow* wnd)
 	{
 		wnd->clear();
-		for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
-			wnd->draw((*it)->gameObject);
+		if (stateMachine->currentState->Loaded)
+		{
+			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
+				wnd->draw((*it)->gameObject);
 
-		wnd->draw(*textResumePtr);
-		wnd->draw(*textExitPtr);
+			wnd->draw(*textResumePtr);
+			wnd->draw(*textExitPtr);
+		}
 
 		wnd->display();
-
 	}
 
 

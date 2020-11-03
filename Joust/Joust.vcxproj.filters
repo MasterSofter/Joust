@@ -55,6 +55,12 @@
     <Filter Include="Source Files\GameStates\LevelStates">
       <UniqueIdentifier>{0812045f-448c-413e-84e0-15b8956646b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameStates\MainMenuStates">
+      <UniqueIdentifier>{a0b0ddde-0c8a-42ab-bb6f-9b0ce0b92204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\MainMenuStates">
+      <UniqueIdentifier>{90193db1-d9a3-4984-8265-20ac36553711}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -159,6 +165,24 @@
     <ClCompile Include="level.StateMachine.cpp">
       <Filter>Source Files\GameStates\LevelStates</Filter>
     </ClCompile>
+    <ClCompile Include="mainMenu.MenuState.cpp">
+      <Filter>Source Files\GameStates\MainMenuStates</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.State.cpp">
+      <Filter>Source Files\GameStates\MainMenuStates</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.LoadLevelState.cpp">
+      <Filter>Source Files\GameStates\MainMenuStates</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.ExitState.cpp">
+      <Filter>Source Files\GameStates\MainMenuStates</Filter>
+    </ClCompile>
+    <ClCompile Include="mainMenu.StateMachine.cpp">
+      <Filter>Source Files\GameStates\MainMenuStates</Filter>
+    </ClCompile>
+    <ClCompile Include="level.ExitState.cpp">
+      <Filter>Source Files\GameStates\LevelStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -261,6 +285,24 @@
       <Filter>Header Files\GameStates\LevelStates</Filter>
     </ClInclude>
     <ClInclude Include="level.StateMachine.h">
+      <Filter>Header Files\GameStates\LevelStates</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.State.h">
+      <Filter>Header Files\GameStates\MainMenuStates</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.MenuState.h">
+      <Filter>Header Files\GameStates\MainMenuStates</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.LoadLevelState.h">
+      <Filter>Header Files\GameStates\MainMenuStates</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.ExitState.h">
+      <Filter>Header Files\GameStates\MainMenuStates</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.StateMachine.h">
+      <Filter>Header Files\GameStates\MainMenuStates</Filter>
+    </ClInclude>
+    <ClInclude Include="level.ExitState.h">
       <Filter>Header Files\GameStates\LevelStates</Filter>
     </ClInclude>
   </ItemGroup>

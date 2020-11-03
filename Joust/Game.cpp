@@ -7,14 +7,9 @@ Game::Game()
 	_event =  new sf::Event();
 	_clock =  new sf::Clock();
 
-	addScene(new SplashScreen(SCENE_NAME_SPLASHSCREEN));
-	addScene(new level::Level(SCENE_NAME_LEVEL));
-	addScene(new MainMenu(SCENE_NAME_MAINMENU));
 
-	for (auto it = _scenes.begin(); it != _scenes.end(); it++)
-		it->second->init();
 
-	moveToScene(SCENE_NAME_LEVEL);
+	moveToScene(SCENE_NAME_MAINMENU);
 }
 
 Game::~Game()
@@ -31,7 +26,19 @@ void Game::addScene(Scene* scenePtr)
 }
 void Game::moveToScene(sf::String sceneName)
 {
-	_currentScene = _scenes[sceneName];
+	delete(_currentScene);
+	if (sceneName == SCENE_NAME_MAINMENU)
+	{
+		_currentScene = new mainMenu::MainMenu(SCENE_NAME_MAINMENU);
+		_currentScene->init();
+	}
+
+	if (sceneName == SCENE_NAME_LEVEL)
+	{
+		_currentScene = new level::Level(SCENE_NAME_LEVEL);
+		_currentScene->init();
+	}
+
 }
 
 
@@ -65,6 +72,30 @@ void Game::update()
 	_deltaTime = _clock->restart().asSeconds();
 
 	_currentScene->run(_deltaTime, _window->getSize());
+
+	if (_currentScene->Name() == SCENE_NAME_MAINMENU)
+	{
+		if (_currentScene->CurrentStateName == "LoadLevel")
+		{
+			moveToScene(SCENE_NAME_LEVEL);
+		}
+		if (_currentScene->CurrentStateName == "Exit")
+			_window->close();
+	}
+
+
+
+	if (_currentScene->Name() == SCENE_NAME_LEVEL)
+	{
+		if (_currentScene->CurrentStateName == "Exit")
+		{
+			moveToScene(SCENE_NAME_MAINMENU);
+
+			return;
+		}
+			
+	}
+
 }
 
 

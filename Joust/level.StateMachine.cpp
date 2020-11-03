@@ -6,6 +6,7 @@ namespace level
 	{
 		AddState(new GameState(level));
 		AddState(new PauseState(level));
+		AddState(new ExitState(level));
 		
 	}
 

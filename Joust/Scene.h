@@ -16,6 +16,7 @@ public:
 	std::list<GameObject*> _gameObjects;
 	std::list<sf::Text*>	_texts;
 	sf::Font			_font;
+	sf::String			CurrentStateName;
 
 						Scene(sf::String name);
 	sf::String			Name();

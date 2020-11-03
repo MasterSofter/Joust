@@ -149,8 +149,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="level.ExitState.cpp" />
+    <ClCompile Include="mainMenu.ExitState.cpp" />
     <ClCompile Include="level.GameState.cpp" />
     <ClCompile Include="level.PauseState.cpp" />
+    <ClCompile Include="mainMenu.LoadLevelState.cpp" />
+    <ClCompile Include="mainMenu.MenuState.cpp" />
     <ClCompile Include="player.DeathState.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="AI.FlyLeftState.cpp" />
@@ -182,11 +186,17 @@
     <ClCompile Include="AI.StateMachine.cpp" />
     <ClCompile Include="level.State.cpp" />
     <ClCompile Include="level.StateMachine.cpp" />
+    <ClCompile Include="mainMenu.State.cpp" />
+    <ClCompile Include="mainMenu.StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="level.ExitState.h" />
+    <ClInclude Include="mainMenu.ExitState.h" />
     <ClInclude Include="level.GameState.h" />
     <ClInclude Include="level.PauseState.h" />
+    <ClInclude Include="mainMenu.LoadLevelState.h" />
+    <ClInclude Include="mainMenu.MenuState.h" />
     <ClInclude Include="player.DeathState.h" />
     <ClInclude Include="defs.h" />
     <ClInclude Include="Enemy.h" />
@@ -218,6 +228,8 @@
     <ClInclude Include="AI.StateMachine.h" />
     <ClInclude Include="level.State.h" />
     <ClInclude Include="level.StateMachine.h" />
+    <ClInclude Include="mainMenu.State.h" />
+    <ClInclude Include="mainMenu.StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

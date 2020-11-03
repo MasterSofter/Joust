@@ -23,6 +23,7 @@ namespace level
 			_levelPtr->textExitPtr->setPosition(sf::Vector2f(abs(_levelPtr->menuPtr->getPosition().x), abs(_levelPtr->menuPtr->getPosition().y + 15)));
 
 			Loaded = true;
+			_levelPtr->CurrentStateName = _levelPtr->stateMachine->currentState->Name();
 			_selectedLine = 0;
 		}
 
@@ -67,6 +68,8 @@ namespace level
 				if (_selectedLine == 1)
 				{
 					//Выход в главное меню игры
+					_levelPtr->stateMachine->moveToState(STATE_NAME_EXIT);
+					return;
 				}
 			}
 
