@@ -18,6 +18,7 @@ namespace mainMenu
 	{
 		for (std::map<sf::String, State*>::iterator it = states.begin(); it != states.end(); it++)
 			delete(it->second);
+		states.clear();
 	}
 
 	void StateMachine::moveToState(sf::String stateName)

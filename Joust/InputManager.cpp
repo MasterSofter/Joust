@@ -1,4 +1,4 @@
-#include "StateMachine.h"
+#include "player.StateMachine.h"
 #include "Player.h"
 #include "InputManager.h"
 
@@ -11,17 +11,8 @@ namespace player
 	
 	}
 
-
 	void InputManager::Update()
 	{
-		
-
-		
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-		{
-
-		}
 
 	}
 }

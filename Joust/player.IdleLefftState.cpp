@@ -11,9 +11,14 @@ namespace player
 
 	}
 
+	void IdleLeftState::move()
+	{
+	
+	}
+
 	void IdleLeftState::Do(float deltaTime)
 	{
-		if (_playerPtr != nullptr && !_playerPtr->animation.Working)
+		if (!_playerPtr->animation.Working)
 		{
 			_playerPtr->setVelocity(sf::Vector2f(0, _playerPtr->getVelocity().y));
 			_playerPtr->gameObject.setScale(sf::Vector2f(-1 / 7.f, 1));
@@ -23,27 +28,23 @@ namespace player
 			_playerPtr->animation.Working = true;
 		}
 
-		if (this->_playerPtr != nullptr)
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 		{
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-			{
-				this->_playerPtr->stateMachine->moveToState(STATE_NAME_FLYLEFT);
-				return;
-			}
+			this->_playerPtr->stateMachine->moveToState(STATE_NAME_FLYLEFT);
+			return;
+		}
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			{
-				_playerPtr->stateMachine->moveToState(STATE_NAME_GOLEFT);
-				return;
-			}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			_playerPtr->stateMachine->moveToState(STATE_NAME_GOLEFT);
+			return;
+		}
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			{
-				_playerPtr->stateMachine->moveToState(STATE_NAME_GORIGHT);
-				return;
-			}
-
-		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			_playerPtr->stateMachine->moveToState(STATE_NAME_GORIGHT);
+			return;
 		}
 
 

@@ -8,6 +8,5 @@ public:
 	virtual void	    processEvents();
 	virtual void		render(sf::RenderWindow* wnd);
 	virtual void	    update(float deltaTime, sf::Vector2u windowSize);
-	virtual void		run(float deltaTime, sf::Vector2u windowSize);
 };
 

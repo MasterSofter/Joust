@@ -13,6 +13,12 @@ namespace AI
 
 	}
 
+	void IdleRightState::move()
+	{
+
+	}
+
+
 	void IdleRightState::Do(float deltaTime)
 	{
 		if (_enemyPtr != nullptr && !_enemyPtr->animation.Working)
@@ -41,7 +47,7 @@ namespace AI
 			else
 			{
 				//Занчит двигаемся влево со стабильной скоростью на стабильной высоте
-
+				this->_enemyPtr->stateMachine->moveToState(STATE_NAME_GOLEFT);
 				//Надо перейти в состояние полета влево
 			}
 		}

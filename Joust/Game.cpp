@@ -1,14 +1,9 @@
 #include "Game.h"
-
-
 Game::Game()
 {
 	_window = new sf::RenderWindow(sf::VideoMode(800, 600), "Joust");
 	_event =  new sf::Event();
 	_clock =  new sf::Clock();
-
-
-
 	moveToScene(SCENE_NAME_MAINMENU);
 }
 
@@ -19,11 +14,6 @@ Game::~Game()
 	delete(_clock);
 }
 
-
-void Game::addScene(Scene* scenePtr)
-{
-	_scenes[scenePtr->Name()] = scenePtr;
-}
 void Game::moveToScene(sf::String sceneName)
 {
 	delete(_currentScene);
@@ -41,12 +31,6 @@ void Game::moveToScene(sf::String sceneName)
 
 }
 
-
-void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
-{
-
-}
-
 void Game::processEvents()
 {
 	sf::Event event;
@@ -54,12 +38,6 @@ void Game::processEvents()
 	{
 		switch (_event->type)
 		{
-			case sf::Event::KeyPressed: 
-				handlePlayerInput(_event->key.code, true);
-				break;
-			case sf::Event::KeyReleased: 
-				handlePlayerInput(_event->key.code, false);
-				break;
 			case sf::Event::Closed: 
 				_window->close();
 				break;
@@ -70,8 +48,7 @@ void Game::processEvents()
 void Game::update()
 {
 	_deltaTime = _clock->restart().asSeconds();
-
-	_currentScene->run(_deltaTime, _window->getSize());
+	_currentScene->update(_deltaTime, _window->getSize());
 
 	if (_currentScene->Name() == SCENE_NAME_MAINMENU)
 	{
@@ -83,8 +60,6 @@ void Game::update()
 			_window->close();
 	}
 
-
-
 	if (_currentScene->Name() == SCENE_NAME_LEVEL)
 	{
 		if (_currentScene->CurrentStateName == "Exit")
@@ -92,10 +67,8 @@ void Game::update()
 			moveToScene(SCENE_NAME_MAINMENU);
 
 			return;
-		}
-			
+		}	
 	}
-
 }
 
 

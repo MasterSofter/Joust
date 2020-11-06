@@ -13,13 +13,11 @@ namespace AI
 {
 	class StateMachine
 	{
-		void AddState(State* state);
-
+		void			AddState(State* state);
 	public:
-		StateMachine(Enemy* enemy);
-		~StateMachine();
-		void moveToState(sf::String stateName);
-		void Update(float deltaTime);
+						StateMachine(Enemy* enemy);
+		virtual			~StateMachine();
+		void			moveToState(sf::String stateName);
 
 	public:
 		std::map<sf::String, State*> states;

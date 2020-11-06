@@ -9,6 +9,7 @@ namespace player
 		FlyLeftState(Player* player);
 		virtual ~FlyLeftState();
 		void Do(float deltaTime);
+		void move();
 	};
 
 }

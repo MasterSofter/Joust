@@ -12,9 +12,18 @@ namespace player
 	
 	}
 
+	void GoLeftState::move()
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && _playerPtr->animation.getSwitchTime() > 0.05)
+		{
+			_playerPtr->animation.setSwitchTime(_playerPtr->animation.getSwitchTime() - 0.001f);
+			_playerPtr->setVelocity(_playerPtr->getVelocity() + sf::Vector2f(-2, 0));
+		}
+	}
+
 	void GoLeftState::Do(float deltaTime)
 	{
-		if (_playerPtr != nullptr && !_playerPtr->animation.Working)
+		if (!_playerPtr->animation.Working)
 		{
 			_playerPtr->gameObject.setScale(sf::Vector2f(1 / 7.f, 1));
 			_playerPtr->animation.setCurrentImagePos(sf::Vector2u(4, 1));
@@ -31,36 +40,27 @@ namespace player
 				_playerPtr->animation.Working = true;
 			}
 		}
-		if (_playerPtr != nullptr)
+
+		if (abs(_playerPtr->getVelocity().x) < 2)
 		{
-			if (abs(_playerPtr->getVelocity().x) < 2)
-			{
-				this->_playerPtr->stateMachine->moveToState(STATE_NAME_IDLE_LEFT);
-				return;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && _playerPtr->animation.getSwitchTime() > 0.05)
-			{
-				_playerPtr->animation.setSwitchTime(_playerPtr->animation.getSwitchTime() - 0.001f);
-				_playerPtr->setVelocity(_playerPtr->getVelocity() + sf::Vector2f(-2, 0));
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-			{
-				this->_playerPtr->stateMachine->moveToState(STATE_NAME_FLYLEFT);
-				return;
-			}
-
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			{
-				this->_playerPtr->stateMachine->moveToState(STATE_NAME_GORIGHT);
-				return;
-			}
-
-			_playerPtr->animation.Update(sf::Vector2u(0, 1), deltaTime);
-			_playerPtr->gameObject.setTextureRect(_playerPtr->animation.uvRect);
+			this->_playerPtr->stateMachine->moveToState(STATE_NAME_IDLE_LEFT);
+			return;
 		}
 
-	}
 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			this->_playerPtr->stateMachine->moveToState(STATE_NAME_GORIGHT);
+			return;
+		}
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		{
+			this->_playerPtr->stateMachine->moveToState(STATE_NAME_FLYLEFT);
+			return;
+		}
+
+		_playerPtr->animation.Update(sf::Vector2u(0, 1), deltaTime);
+		_playerPtr->gameObject.setTextureRect(_playerPtr->animation.uvRect);
+	}
 }

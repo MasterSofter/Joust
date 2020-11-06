@@ -9,6 +9,15 @@ namespace level
 		stateMachine->currentState = stateMachine->states[STATE_NAME_GAME];
 	}
 
+	Level::~Level()
+	{
+		delete(menuPtr);
+		delete(kursormenuPtr);
+		delete(textResumePtr);
+		delete(textExitPtr);
+		delete(stateMachine);
+	}
+
 	void Level::init()
 	{
 		GameObject* plat = new GameObject("../data/textures/plat1.png");
@@ -77,7 +86,6 @@ namespace level
 			textResume->setStyle(sf::Text::Bold);
 			textResume->setFillColor(sf::Color(160, 160, 160));
 			textResume->setPosition(sf::Vector2f(-100,-100));
-			_texts.push_back(textResume);
 			textResumePtr = textResume;
 
 		sf::Text* textExit = new sf::Text("Exit", _font);
@@ -85,16 +93,8 @@ namespace level
 			textExit->setStyle(sf::Text::Bold);
 			textExit->setFillColor(sf::Color(160, 160, 160));
 			textExit->setPosition(sf::Vector2f(-100, -100));
-			_texts.push_back(textExit);
 			textExitPtr = textExit;
 	}
-
-	void Level::processEvents()
-	{
-
-	}
-
-
 	void Level::render(sf::RenderWindow* wnd)
 	{
 		wnd->clear();
@@ -110,17 +110,11 @@ namespace level
 		wnd->display();
 	}
 
-
 	void Level::update(float deltaTime, sf::Vector2u windowSize)
 	{
 		this->stateMachine->Update(deltaTime);
 	}
 
-	void Level::run(float deltaTime, sf::Vector2u windowSize)
-	{
-		processEvents();
-		update(deltaTime, windowSize);
-	}
 
 }
 

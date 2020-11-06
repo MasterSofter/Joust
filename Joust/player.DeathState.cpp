@@ -12,6 +12,12 @@ namespace player
 
 	}
 
+	void DeathState::move()
+	{
+	
+	}
+
+
 	void DeathState::Do(float deltaTime)
 	{
 		if (_playerPtr->Alive)
@@ -19,6 +25,5 @@ namespace player
 			_playerPtr->Alive = false;
 			_playerPtr->lifes -= 1;
 		}
-
 	}
 }

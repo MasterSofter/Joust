@@ -9,6 +9,7 @@ namespace player
 		DeathState(Player* player);
 		virtual ~DeathState();
 		void Do(float deltaTime);
+		void move();
 	};
 
 }

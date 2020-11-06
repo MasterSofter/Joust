@@ -10,6 +10,7 @@ namespace AI
 		IdleRightState(Enemy* enemy);
 		virtual ~IdleRightState();
 		void Do(float deltaTime);
+		void move();
 	};
 
 }

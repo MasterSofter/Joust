@@ -15,18 +15,16 @@ namespace player
 {
 	class StateMachine
 	{
-		void AddState(State* state);
-
+		void					AddState(State* state);
 	public:
-		StateMachine(Player* player);
-		~StateMachine();
-		void moveToState(sf::String stateName);	
-		void Update(float deltaTime);
+								StateMachine(Player* player);
+								~StateMachine();
+		void					moveToState(sf::String stateName);	
+		void					Update(float deltaTime);
 
 	public:
 		std::map<sf::String, State*> states;
 		State* currentState = nullptr;
 		Player* player = nullptr;
-
 	};
 }

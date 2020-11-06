@@ -2,7 +2,6 @@
 #include<iostream>
 #include<string>
 #include "player.StateMachine.h"
-#include "InputManager.h"
 
 namespace player
 {
@@ -11,7 +10,6 @@ namespace player
 		rectBounds.setSize(sf::Vector2f(60, 60));
 		rectBounds.setPosition(getPosition());
 
-		//_texture.loadFromFile(texturePath);
 		animation = Animation(_texture, sf::Vector2u(7, 1), sf::Vector2u(4, 1), 0.1f);
 
 		_textureSpawn.loadFromFile(textureSpawnPath);
@@ -20,10 +18,15 @@ namespace player
 		stateMachine = new StateMachine(this);
 		stateMachine->currentState = stateMachine->states[STATE_NAME_SPAWN];
 		
-		_inputManagerPtr = new InputManager(this);
 		_mass = 160;
 		_accelerate = sf::Vector2f(0, 0);
 	}
+
+	Player::~Player()
+	{
+		delete(stateMachine);
+	}
+
 
 	void Player::switchTexture(sf::String textureName)
 	{
@@ -62,9 +65,15 @@ namespace player
 		this->stateMachine->moveToState(STATE_NAME_DEATH);
 	}
 
+	void Player::move()
+	{
+		stateMachine->currentState->move();
+	}
+
 	void Player::Update(float deltaTime, sf::Vector2u windowSize)
 	{
-		stateMachine->Update(deltaTime);
+		stateMachine->currentState->Do(deltaTime);
+		move();
 	}
 
 	void Player::setPosition(sf::Vector2f position)

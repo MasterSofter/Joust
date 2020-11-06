@@ -24,11 +24,9 @@ public:
 	void				setMass(float mass);
 	float				getMass();
 
-	
-
-
 
 public:
+
 	bool				Static = false;
 	bool				Grounded = false;
 	bool				Alive = true;
@@ -39,8 +37,8 @@ public:
 	sf::Text			text;
 
 protected:
-	sf::Texture _texture;
 
+	sf::Texture _texture;
 	sf::Vector2f _position;
 	float _mass;
 	sf::Vector2f _accelerate = sf::Vector2f(0, 0);

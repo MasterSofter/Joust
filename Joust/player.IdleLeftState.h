@@ -11,5 +11,6 @@ namespace player
 		IdleLeftState(Player* player);
 		virtual ~IdleLeftState();
 		void Do(float deltaTime);
+		void move();
 	};
 }

@@ -7,18 +7,18 @@ namespace level
 		AddState(new GameState(level));
 		AddState(new PauseState(level));
 		AddState(new ExitState(level));
-		
+	}
+
+	StateMachine::~StateMachine()
+	{
+		for (auto it = states.begin(); it != states.end(); it++)
+			delete((*it).second);
+		states.clear();
 	}
 
 	void StateMachine::AddState(State* state)
 	{
 		states[state->Name()] = state;
-	}
-
-	StateMachine::~StateMachine()
-	{
-		for (std::map<sf::String, State*>::iterator it = states.begin(); it != states.end(); it++)
-			delete(it->second);
 	}
 
 	void StateMachine::moveToState(sf::String stateName)

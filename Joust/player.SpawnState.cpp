@@ -12,9 +12,13 @@ namespace player
 
 	}
 
+	void SpawnState::move()
+	{
+	}
+
 	void SpawnState::Do(float deltaTime)
 	{
-		if (_playerPtr != nullptr && !_playerPtr->animationSpawn.Working)
+		if (!_playerPtr->animationSpawn.Working)
 		{
 			_playerPtr->Alive = true;
 			_playerPtr->switchTexture("SpawnTexture");
@@ -26,16 +30,13 @@ namespace player
 			_playerPtr->animationSpawn.Working = true;
 		}
 
-		if (this->_playerPtr != nullptr)
+		if (_playerPtr->animationSpawn.getCurrentImagePos().x == 5)
 		{
-			if (_playerPtr->animationSpawn.getCurrentImagePos().x == 5)
-			{
-				_playerPtr->animationSpawn.Working = false;
-				_playerPtr->stateMachine->moveToState(STATE_NAME_IDLE_RIGHT);
-				return;
-			}
-			_playerPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
-			_playerPtr->gameObject.setTextureRect(_playerPtr->animationSpawn.uvRect);
+			_playerPtr->animationSpawn.Working = false;
+			_playerPtr->stateMachine->moveToState(STATE_NAME_IDLE_RIGHT);
+			return;
 		}
+		_playerPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
+		_playerPtr->gameObject.setTextureRect(_playerPtr->animationSpawn.uvRect);
 	}
 }

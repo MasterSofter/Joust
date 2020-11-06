@@ -10,6 +10,7 @@ namespace player
 						IdleRightState(Player* player);
 		virtual			~IdleRightState();
 		void			Do(float deltaTime);
+		void			move();
 	};
 
 

@@ -13,6 +13,7 @@ namespace AI
 	public:
 		virtual ~State() PURE {}
 		virtual void Do(float deltaTime) {}
+		virtual void move() = 0;
 		sf::String Name() { return _name; }
 
 		bool keyRightPressed = false;

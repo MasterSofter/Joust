@@ -171,7 +171,6 @@
     <ClCompile Include="player.GoRightState.cpp" />
     <ClCompile Include="player.IdleLefftState.cpp" />
     <ClCompile Include="player.IdleRightState.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
@@ -191,6 +190,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="AI.IMoveble.h" />
+    <ClInclude Include="player.IMoveble.h" />
     <ClInclude Include="level.ExitState.h" />
     <ClInclude Include="mainMenu.ExitState.h" />
     <ClInclude Include="level.GameState.h" />
@@ -214,7 +215,6 @@
     <ClInclude Include="player.GoRightState.h" />
     <ClInclude Include="player.IdleLeftState.h" />
     <ClInclude Include="player.IdleRightState.h" />
-    <ClInclude Include="InputManager.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Physics.h" />

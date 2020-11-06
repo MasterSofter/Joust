@@ -13,6 +13,12 @@ namespace AI
 
 	}
 
+
+	void GoLeftState::move()
+	{
+		_enemyPtr->setVelocity(sf::Vector2f(-80, _enemyPtr->getVelocity().y));
+	}
+
 	void GoLeftState::Do(float deltaTime)
 	{
 		if (_enemyPtr != nullptr && !_enemyPtr->animation.Working)
@@ -37,8 +43,6 @@ namespace AI
 		{
 			bool Space = false;
 			float deltaX = _enemyPtr->playergetPosition().x - _enemyPtr->getPosition().x;
-
-			_enemyPtr->setVelocity(sf::Vector2f(-80, _enemyPtr->getVelocity().y));
 
 			Space = true;
 			if (Space && deltaX > 0)

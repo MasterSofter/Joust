@@ -12,18 +12,18 @@ GameObject::GameObject(const sf::String texturePath)
 	rectBounds.setOrigin(sf::Vector2f(_texture.getSize().x / 2, _texture.getSize().y / 2));
 }
 
-GameObject::~GameObject() {};
+GameObject::~GameObject() 
+{
 
+}
 void GameObject::Update(float deltaTime, sf::Vector2u windowSize)
 {
 
 }
-
 void GameObject::Spawn(sf::Vector2f spawnPos)
 {
 
 }
-
 void GameObject::Kill()
 {
 

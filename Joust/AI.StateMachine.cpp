@@ -21,6 +21,7 @@ namespace AI
 	{
 		for (std::map<sf::String, State*>::iterator it = states.begin(); it != states.end(); it++)
 			delete(it->second);
+		states.clear();
 	}
 
 	void StateMachine::moveToState(sf::String stateName)
@@ -28,10 +29,5 @@ namespace AI
 		currentState = states[stateName];
 		this->enemy->animation.Working = false;
 
-	}
-
-	void StateMachine::Update(float deltaTime)
-	{
-		this->currentState->Do(deltaTime);
 	}
 }

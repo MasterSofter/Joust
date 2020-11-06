@@ -17,15 +17,26 @@ namespace AI
 		_accelerate = sf::Vector2f(0, 0);
 	}
 
+	Enemy::~Enemy()
+	{
+		delete(stateMachine);
+	}
+
 	sf::Vector2f Enemy::playergetPosition()
 	{
 		return _player->getPosition();
 	}
 
+	void Enemy::move()
+	{
+		
+	}
+
+
 	void Enemy::Update(float deltaTime, sf::Vector2u windowSize)
 	{
-		_windowSize = windowSize;
-		stateMachine->Update(deltaTime);
+		stateMachine->currentState->move();
+		stateMachine->currentState->Do(deltaTime);
 	}
 	void Enemy::setPosition(sf::Vector2f position)
 	{

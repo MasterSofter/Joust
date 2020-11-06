@@ -9,6 +9,7 @@ namespace AI
 		GoLeftState(Enemy* enemy);
 		virtual ~GoLeftState();
 		void Do(float deltaTime);
+		void move();
 	};
 
 }

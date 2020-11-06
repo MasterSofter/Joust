@@ -10,5 +10,6 @@ namespace player
 		GoRightState(Player* player);
 		virtual ~GoRightState();
 		void Do(float deltaTime);
+		void move();
 	};
 }

@@ -10,8 +10,8 @@ namespace player
 		State(Player* player, sf::String name);
 
 	public:
-		virtual ~State() PURE {}
-		virtual void Do(float deltaTime){}
+		virtual void Do(float deltaTime) = 0;
+		virtual void move() = 0;
 		sf::String Name() { return _name; }
 
 		bool keyRightPressed = false;

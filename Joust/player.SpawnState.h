@@ -9,6 +9,7 @@ namespace player
 						SpawnState(Player* player);
 		virtual			~SpawnState();
 		void			Do(float deltaTime);
+		void			move();
 	};
 
 }

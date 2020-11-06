@@ -10,6 +10,17 @@ namespace mainMenu
 		stateMachine->moveToState(STATE_NAME_MAINMENU);
 	}
 
+	MainMenu::~MainMenu()
+	{
+		delete(stateMachine);
+		delete(menuPtr);
+		delete(kursormenuPtr);
+		delete(textJoustPtr);
+		delete(textPlayPtr);
+		delete(textExitPtr);
+	}
+
+	// инициализация сцены
 	void MainMenu::init()
 	{
 		GameObject* plat = new GameObject("../data/textures/plat1.png");
@@ -71,7 +82,6 @@ namespace mainMenu
 		textPlay->setStyle(sf::Text::Bold);
 		textPlay->setFillColor(sf::Color(160, 160, 160));
 		textPlay->setPosition(sf::Vector2f(-100, -100));
-		_texts.push_back(textPlay);
 		textPlayPtr = textPlay;
 
 		sf::Text* textExit = new sf::Text("Exit", _font);
@@ -79,23 +89,16 @@ namespace mainMenu
 		textExit->setStyle(sf::Text::Bold);
 		textExit->setFillColor(sf::Color(160, 160, 160));
 		textExit->setPosition(sf::Vector2f(-100, -100));
-		_texts.push_back(textExit);
 		textExitPtr = textExit;
 
 		sf::Text* textJoust = new sf::Text("Joust", _font);
 		textJoust->setCharacterSize(150);
 		textJoust->setStyle(sf::Text::Bold);
 		textJoust->setFillColor(sf::Color(255,165,0));
-		_texts.push_back(textJoust);
 		textJoustPtr = textJoust;
 	}
-
-	void MainMenu::processEvents()
-	{
-
-	}
-
-
+	
+	//отрисовка сцены
 	void MainMenu::render(sf::RenderWindow* wnd)
 	{
 		wnd->clear();
@@ -111,15 +114,9 @@ namespace mainMenu
 		wnd->display();
 	}
 
-
+	//обновление сцены
 	void MainMenu::update(float deltaTime, sf::Vector2u windowSize)
 	{
 		stateMachine->currentState->Do(deltaTime);
-	}
-
-	void MainMenu::run(float deltaTime, sf::Vector2u windowSize)
-	{
-		processEvents();
-		update(deltaTime, windowSize);
 	}
 }
