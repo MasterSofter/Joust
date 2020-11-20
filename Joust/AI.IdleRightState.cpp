@@ -21,8 +21,12 @@ namespace AI
 
 	void IdleRightState::Do(float deltaTime)
 	{
+		_enemyPtr->checkedCollisions = true;
 		if (_enemyPtr != nullptr && !_enemyPtr->animation.Working)
 		{
+			_enemyPtr->Static = false;
+			_enemyPtr->checkedCollisions = true;
+			_enemyPtr->switchTexture("EnemyTexture");
 			_enemyPtr->setVelocity(sf::Vector2f(0, _enemyPtr->getVelocity().y));
 			_enemyPtr->gameObject.setScale(sf::Vector2f(1 / 7.f, 1));
 			_enemyPtr->animation.setCurrentImagePos(sf::Vector2u(2, 1));

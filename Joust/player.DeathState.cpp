@@ -20,8 +20,10 @@ namespace player
 
 	void DeathState::Do(float deltaTime)
 	{
+		_playerPtr->checkedCollisions = false;
 		if (!_playerPtr->animationUnmounted.Working)
 		{
+			_playerPtr->checkedCollisions = false;
 			_playerPtr->isDead = true;
 			_playerPtr->switchTexture("UnmountedPlayerTexture");
 

@@ -39,6 +39,8 @@ namespace level
 				{
 					if ((*it)->Name == "Player" && !(*it)->Alive)
 						(*it)->Spawn(sf::Vector2f(360, 472));
+					if ((*it)->Name == "Enemy" && !(*it)->Alive)
+						(*it)->Spawn(sf::Vector2f(157, 108));
 
 					if ((*it)->getPosition().x > 800)
 						(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));

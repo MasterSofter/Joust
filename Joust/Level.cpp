@@ -58,7 +58,7 @@ namespace level
 			_gameObjects.push_back(player);
 			physics.addGameObject(player);
 
-		GameObject* enemy = new AI::Enemy("../data/textures/enemies2.png", (player::Player*) player);
+		GameObject* enemy = new AI::Enemy("../data/textures/Enemy.png", "../data/textures/spawn1.png", "../data/textures/EnemyUnmounted.png", (player::Player*) player);
 			enemy->setPosition(sf::Vector2f(157, 108));
 			enemy->Name = "Enemy";
 			_gameObjects.push_back(enemy);

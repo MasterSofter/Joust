@@ -4,12 +4,14 @@ namespace AI
 	StateMachine::StateMachine(Enemy* e)
 		: enemy(e)
 	{
+		AddState(new SpawnState(enemy));
 		AddState(new IdleRightState(enemy));
 		AddState(new IdleLeftState(enemy));
 		AddState(new GoRightState(enemy));
 		AddState(new GoLeftState(enemy));
 		AddState(new FlyRightState(enemy));
 		AddState(new FlyLeftState(enemy));
+		AddState(new DeathState(enemy));
 	}
 
 	void StateMachine::AddState(State* state)
@@ -28,6 +30,8 @@ namespace AI
 	{
 		currentState = states[stateName];
 		this->enemy->animation.Working = false;
+		this->enemy->animationSpawn.Working = false;
+		this->enemy->animationUnmounted.Working = false;
 
 	}
 }

@@ -8,6 +8,8 @@
 #include "AI.GoLeftState.h"
 #include "AI.FlyRightState.h"
 #include "AI.FlyLeftState.h"
+#include "AI.DeathState.h"
+#include "AI.SpawnState.h"
 
 namespace AI
 {
@@ -23,7 +25,6 @@ namespace AI
 		std::map<sf::String, State*> states;
 		State* currentState = nullptr;
 		Enemy* enemy = nullptr;
-
 	};
 
 }

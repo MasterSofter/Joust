@@ -24,6 +24,8 @@ public:
 	void				setMass(float mass);
 	float				getMass();
 
+	bool				checkedCollisions = true;
+
 
 public:
 

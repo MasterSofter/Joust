@@ -20,6 +20,8 @@ namespace player
 	{
 		if (!_playerPtr->animationSpawn.Working)
 		{
+			_playerPtr->Static = true;
+			_playerPtr->checkedCollisions = false;
 			_playerPtr->isDead = false;
 			_playerPtr->Alive = true;
 			_playerPtr->switchTexture("SpawnTexture");

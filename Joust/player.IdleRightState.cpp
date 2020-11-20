@@ -20,8 +20,11 @@ namespace player
 
 	void IdleRightState::Do(float deltaTime)
 	{
+		_playerPtr->checkedCollisions = true;
 		if (!_playerPtr->animation.Working)
 		{
+			_playerPtr->checkedCollisions = true;
+			_playerPtr->Static = false;
 			_playerPtr->switchTexture("PlayerTexture");
 			_playerPtr->setVelocity(sf::Vector2f(0, _playerPtr->getVelocity().y));
 			_playerPtr->gameObject.setScale(sf::Vector2f(1 / 7.f, 1));

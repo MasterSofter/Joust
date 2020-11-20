@@ -63,7 +63,7 @@ void Physics::Update(float deltaTime)
 			{
 				GameObject* obj;
 				obj = checkCollisions(it->first);
-				if (obj != nullptr && obj->Name == "Player" && it->first->getPosition().y < obj->getPosition().y)
+				if (obj != nullptr && obj->Name == "Player" && it->first->checkedCollisions &&it->first->getPosition().y < obj->getPosition().y)
 				{
 					obj->Kill();
 				}
@@ -73,7 +73,7 @@ void Physics::Update(float deltaTime)
 			{
 				GameObject* obj;
 				obj = checkCollisions(it->first);
-				if (obj != nullptr && obj->Name == "Enemy" && it->first->getPosition().y < obj->getPosition().y)
+				if (obj != nullptr && obj->Name == "Enemy" && it->first->checkedCollisions &&it->first->getPosition().y < obj->getPosition().y)
 				{
 					obj->Kill();
 				}
@@ -123,7 +123,7 @@ GameObject* Physics::checkCollisions(GameObject* gameObj)
 {
 	for (auto it = gameobjects.begin(); it != gameobjects.end(); it++)
 	{
-		if (it->first != gameObj)
+		if (it->first != gameObj && it->first->checkedCollisions)
 		{
 			sf::FloatRect gameObjRect = gameObj->rectBounds.getGlobalBounds();
 			sf::FloatRect rectBounds = (*it).first->rectBounds.getGlobalBounds();

@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AI.DeathState.cpp" />
     <ClCompile Include="level.ExitState.cpp" />
     <ClCompile Include="mainMenu.ExitState.cpp" />
     <ClCompile Include="level.GameState.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="player.SpawnState.cpp" />
+    <ClCompile Include="AI.SpawnState.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="player.State.cpp" />
     <ClCompile Include="player.StateMachine.cpp" />
@@ -191,6 +193,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AI.IMoveble.h" />
+    <ClInclude Include="AI.DeathState.h" />
     <ClInclude Include="player.IMoveble.h" />
     <ClInclude Include="level.ExitState.h" />
     <ClInclude Include="mainMenu.ExitState.h" />
@@ -221,6 +224,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="player.SpawnState.h" />
+    <ClInclude Include="AI.SpawnState.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="player.State.h" />
     <ClInclude Include="player.StateMachine.h" />
