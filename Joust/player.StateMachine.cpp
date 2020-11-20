@@ -30,6 +30,7 @@ namespace player
 		currentState = states[stateName];
 		this->player->animation.Working = false;
 		this->player->animationSpawn.Working = false;
+		this->player->animationUnmounted.Working = false;
 	}
 
 	void StateMachine::Update(float deltaTime)

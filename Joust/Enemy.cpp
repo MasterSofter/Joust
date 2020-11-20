@@ -24,6 +24,8 @@ namespace AI
 
 	sf::Vector2f Enemy::playergetPosition()
 	{
+		if (_player->isDead)
+			return this->_position;
 		return _player->getPosition();
 	}
 
@@ -31,7 +33,6 @@ namespace AI
 	{
 		
 	}
-
 
 	void Enemy::Update(float deltaTime, sf::Vector2u windowSize)
 	{

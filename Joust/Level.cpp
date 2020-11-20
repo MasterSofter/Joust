@@ -50,7 +50,7 @@ namespace level
 			_gameObjects.push_back(plat4);
 			physics.addGameObject(plat4);
 
-		GameObject* player = new player::Player("../data/textures/enemies.png", "../data/textures/spawn1.png");
+		GameObject* player = new player::Player("../data/textures/Player.png", "../data/textures/spawn1.png", "../data/textures/UnmountedPlayer.png");
 			player->setPosition(sf::Vector2f(360, 472));
 			player->Name = "Player";
 			player->lifes = 5;

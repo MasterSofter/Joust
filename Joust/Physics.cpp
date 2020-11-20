@@ -57,6 +57,27 @@ void Physics::Update(float deltaTime)
 
 			if (it->first->getPosition().y > 600)
 				it->first->Kill();
+
+
+			if (it->first->Name == "Enemy")
+			{
+				GameObject* obj;
+				obj = checkCollisions(it->first);
+				if (obj != nullptr && obj->Name == "Player" && it->first->getPosition().y < obj->getPosition().y)
+				{
+					obj->Kill();
+				}
+			}
+
+			if (it->first->Name == "Player")
+			{
+				GameObject* obj;
+				obj = checkCollisions(it->first);
+				if (obj != nullptr && obj->Name == "Enemy" && it->first->getPosition().y < obj->getPosition().y)
+				{
+					obj->Kill();
+				}
+			}
 		}
 		
 	}

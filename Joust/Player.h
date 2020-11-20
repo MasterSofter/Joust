@@ -10,12 +10,14 @@ namespace player
 	class Player : public GameObject, public IMoveble 
 	{
 	public:
-							Player(sf::String texturePath, sf::String textureSpawnPath);
+							Player(sf::String texturePath, sf::String textureSpawnPath, sf::String textureUnmountedPath);
 		virtual				~Player();
 
 	public:
+		bool				isDead = false;
 		Animation			animation;
 		Animation			animationSpawn;
+		Animation			animationUnmounted;
 		StateMachine*		stateMachine;
 		void				Update(float deltaTime, sf::Vector2u windowSize);
 		virtual void		Spawn(sf::Vector2f spawnPos);
@@ -26,6 +28,7 @@ namespace player
 	private:
 		sf::IntRect			rect;
 		sf::Texture			_textureSpawn;
+		sf::Texture			_textureUnmounted;
 		sf::String			_currentTexturename = "";
 	};
 }

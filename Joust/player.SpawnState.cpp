@@ -20,6 +20,7 @@ namespace player
 	{
 		if (!_playerPtr->animationSpawn.Working)
 		{
+			_playerPtr->isDead = false;
 			_playerPtr->Alive = true;
 			_playerPtr->switchTexture("SpawnTexture");
 			_playerPtr->setVelocity(sf::Vector2f(0, 0));

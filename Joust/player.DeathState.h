@@ -5,6 +5,7 @@ namespace player
 {
 	class DeathState : public State
 	{
+		float switchedY = 0.f;
 	public:
 		DeathState(Player* player);
 		virtual ~DeathState();
