@@ -11,6 +11,8 @@ class Scene
 protected:
 	sf::String _name;
 public:
+	std::list<GameObject*>  newObjects;			//Список обьектов которые подлежат созданию
+	std::list<GameObject*>  destroedObjects;	//Список обьектов которые подлежат уничтожению
 	std::list<GameObject*>  _gameObjects;		//Список игровых объектов на сцене
 	sf::Font			    _font;				//Шрифт текста на сцене
 	sf::String			    CurrentStateName;	//Текущее состояние внутри сцены

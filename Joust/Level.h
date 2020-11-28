@@ -9,7 +9,7 @@ namespace level
 	class Level : public Scene
 	{
 	public:
-
+		GameObject*			player;
 		GameObject*			menuPtr;
 		GameObject*			kursormenuPtr;
 		sf::Text*			textResumePtr;
