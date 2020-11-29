@@ -27,8 +27,10 @@ public:
 	bool				checkedCollisions = true;
 
 
+
 public:
 
+	bool				DrawAble = false;
 	bool				Static = false;
 	bool				Grounded = false;
 	bool				Alive = true;

@@ -2,12 +2,12 @@
 #include "level.State.h"
 #include <ctime>
 #include <cstdlib>
+#include <string.h>
 namespace level
 {
-
 	class GameManager
 	{
-		sf::Text waveNumberText;	//Текст который будет выводится: Wave (номер волны)
+		float spawnTimeEnemy = 0;
 		float timeLoadLevel = 0;	//Время загрузки уровня
 		int currentWave = 1;		//Текущая волна
 		int countEnemies = 0;		//Кол-во монстров в текущей волне
@@ -15,11 +15,14 @@ namespace level
 		Level* levelPtr;
 
 		sf::Vector2f positions[4] = { {360, 472}, {157, 108}, {690, 148}, {574, 328} };
+
+		bool findEnemy();
+		void updateEnemies();
 	public:
 		GameManager(Level* levelPtr);
 		void spawnEnemy();		//Возрождение врага в рандомном месте
 		void spawnPlayer();		//Возрождение игрока в рандомном месте
-		bool loadNextLevel();	//Загружает следующий уровень
+		bool showTextWave();	//Загружает следующий уровень
 		/*Показывает текст Wave (номер волны)
 		  Обновляет счетчик кол-ва монстров на экране
 		*/

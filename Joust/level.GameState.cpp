@@ -7,6 +7,9 @@ namespace level
 	{
 		srand(time(NULL));
 		this->levelPtr = levelPtr;
+
+
+
 	}
 
 	int GameManager::random(int A, int B)
@@ -19,7 +22,7 @@ namespace level
 	{
 		//Логика рандомного выбора точки спавна
 		int i = random(0, 3);
-		GameObject* enemy = new AI::Enemy("../data/textures/Enemy.png", "../data/textures/spawn1.png", 
+		GameObject* enemy = new AI::Enemy("../data/textures/Enemy.png", "../data/textures/spawn1.png",
 			"../data/textures/EnemyUnmounted.png", (player::Player*) levelPtr->player);
 
 		enemy->setPosition(this->positions[i]);
@@ -27,7 +30,7 @@ namespace level
 		levelPtr->newObjects.push_back(enemy);
 
 		countEnemies--;
-	}		
+	}
 	//Возрождение игрока в рандомном месте
 	void GameManager::spawnPlayer()
 	{
@@ -40,31 +43,63 @@ namespace level
 	/*Показывает текст Wave (номер волны)
 	  Обновляет счетчик кол-ва монстров на экране
 	*/
-	bool GameManager::loadNextLevel()
+	bool GameManager::showTextWave()
 	{
-		/*
-		timeLoadLevel += 0.1f;
+		std::string stringName = "Wave ";
+		std::string stringNumb;
+
+
+		sf::String str = stringName + std::to_string(currentWave);
+
+		levelPtr->waveNumberText->setString(str);
+		levelPtr->waveNumberText->setPosition(sf::Vector2f(320, 180));
 		//Показать текст на экране
-		if (timeLoadLevel >= 10)
+		if (timeLoadLevel > 10)
 		{
-			//убрать текст на экране
+			levelPtr->waveNumberText->setPosition(sf::Vector2f(-320, -180));
 			return true;
 		}
-		else
-			return false;
-		*/
-		return true;
+		timeLoadLevel += 0.1f;
+		return false;
+
 
 	}
+
+	bool GameManager::findEnemy()
+	{
+		for (auto it = levelPtr->_gameObjects.begin(); it != levelPtr->_gameObjects.end(); it++)
+		{
+			if ((*it)->Name == "Enemy")
+				return true;
+		}
+		return false;
+	}
+
+	void GameManager::updateEnemies()
+	{
+		if (countEnemies > 0 && spawnTimeEnemy > 12)
+		{
+			spawnEnemy();
+			spawnTimeEnemy = 0;
+			countEnemies--;
+		}
+		spawnTimeEnemy += 0.04f;
+	}
+
 	//Обновляет игру
 	void GameManager::update(float deltaTime)
 	{
 		//Проверить кол-во монстров 
-		if (countEnemies == 0)
+
+		if (countEnemies <= 0 && !findEnemy())
 		{
-			loadNextLevel();
+			currentWave++;
+			countEnemies = 5 + currentWave;
+			timeLoadLevel = 0;
 		}
 
+		showTextWave();
+		updateEnemies();
 		levelPtr->physics.Update(deltaTime);
 		for (auto it = levelPtr->_gameObjects.begin(); it != levelPtr->_gameObjects.end(); it++)
 		{
@@ -73,13 +108,10 @@ namespace level
 			{
 				if ((*it)->Name == "Player" && !(*it)->Alive)
 					spawnPlayer();
-
 				if ((*it)->Name == "Enemy" && !(*it)->Alive)
 				{
 					levelPtr->destroedObjects.push_back(*it);
-					spawnEnemy();
 				}
-
 
 				if ((*it)->getPosition().x > 800)
 					(*it)->setPosition(sf::Vector2f(0, (*it)->getPosition().y));

@@ -39,8 +39,10 @@ namespace AI
 			_enemyPtr->stateMachine->moveToState(STATE_NAME_IDLE_RIGHT);
 			return;
 		}
-		_enemyPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
 		_enemyPtr->gameObject.setTextureRect(_enemyPtr->animationSpawn.uvRect);
+		_enemyPtr->DrawAble = true;
+		_enemyPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
+
 	}
 
 

@@ -39,7 +39,9 @@ namespace player
 			_playerPtr->stateMachine->moveToState(STATE_NAME_IDLE_RIGHT);
 			return;
 		}
-		_playerPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
 		_playerPtr->gameObject.setTextureRect(_playerPtr->animationSpawn.uvRect);
+		_playerPtr->DrawAble = true;
+		_playerPtr->animationSpawn.Update(sf::Vector2u(0, 1), deltaTime);
+
 	}
 }

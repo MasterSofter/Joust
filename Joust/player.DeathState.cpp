@@ -67,6 +67,7 @@ namespace player
 		// —бросить жизнь 
 		if (_playerPtr->getPosition().x < 0 || _playerPtr->getPosition().x > 800)
 		{
+			_playerPtr->DrawAble = false;
 			_playerPtr->Alive = false;
 			_playerPtr->lifes -= 1;
 		}

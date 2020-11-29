@@ -22,30 +22,35 @@ namespace level
 	{
 		GameObject* plat = new GameObject("../data/textures/plat1.png");
 			plat->Static = true;
+			plat->DrawAble = true;
 			plat->setPosition(sf::Vector2f(400, 600-98/2.f));
 			_gameObjects.push_back(plat);
 			physics.addGameObject(plat);
 
 		GameObject* plat1 = new GameObject("../data/textures/plat8.png");
 			plat1->Static = true;
+			plat1->DrawAble = true;
 			plat1->setPosition(sf::Vector2f(550, 370));
 			_gameObjects.push_back(plat1);
 			physics.addGameObject(plat1);
 
 		GameObject* plat2 = new GameObject("../data/textures/plat2.png");
 			plat2->Static = true;
+			plat2->DrawAble = true;
 			plat2->setPosition(sf::Vector2f(220, 600/2));
 			_gameObjects.push_back(plat2);
 			physics.addGameObject(plat2);
 
 		GameObject* plat3 = new GameObject("../data/textures/plat3.png");
 			plat3->Static = true;
+			plat3->DrawAble = true;
 			plat3->setPosition(sf::Vector2f(180, 600/4));
 			_gameObjects.push_back(plat3);
 			physics.addGameObject(plat3);
 
 		GameObject* plat4 = new GameObject("../data/textures/plat6.png");
 			plat4->Static = true;
+			plat4->DrawAble = true;
 			plat4->setPosition(sf::Vector2f(700, 600/3.2f));
 			_gameObjects.push_back(plat4);
 			physics.addGameObject(plat4);
@@ -66,6 +71,7 @@ namespace level
 
 		GameObject* menu = new GameObject("../data/textures/menu.png");
 			menu->Static = true;
+			menu->DrawAble = true;
 			menu->Name = "Menu";
 			menu->setPosition(sf::Vector2f(-800/2.f, -600 /2.f));
 			menu->gameObject.setScale(sf::Vector2f(12, 12));
@@ -74,6 +80,7 @@ namespace level
 
 		GameObject* kursorMenu = new GameObject("../data/textures/kursor.png");
 			kursorMenu->Static = true;
+			kursorMenu->DrawAble = true;
 			kursorMenu->Name = "Kursor";
 			kursorMenu->setPosition(sf::Vector2f(-100, -100));
 			kursorMenu->gameObject.setScale(sf::Vector2f(1.2f, 1.2f));
@@ -94,6 +101,12 @@ namespace level
 			textExit->setFillColor(sf::Color(160, 160, 160));
 			textExit->setPosition(sf::Vector2f(-100, -100));
 			textExitPtr = textExit;
+
+			waveNumberText = new sf::Text("Wave", _font);
+			waveNumberText->setCharacterSize(50);
+			waveNumberText->setStyle(sf::Text::Bold);
+			waveNumberText->setFillColor(sf::Color(160, 160, 160));
+			waveNumberText->setPosition(sf::Vector2f(-320, -180));
 	}
 	void Level::render(sf::RenderWindow* wnd)
 	{
@@ -101,10 +114,16 @@ namespace level
 		if (stateMachine->currentState->Loaded)
 		{
 			for (auto it = _gameObjects.begin(); it != _gameObjects.end(); it++)
-				wnd->draw((*it)->gameObject);
+			{
+				if((*it)->DrawAble)
+					wnd->draw((*it)->gameObject);
+			}
 
+
+			wnd->draw(*waveNumberText);
 			wnd->draw(*textResumePtr);
 			wnd->draw(*textExitPtr);
+
 		}
 
 		wnd->display();
