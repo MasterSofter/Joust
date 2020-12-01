@@ -1,3 +1,4 @@
-﻿  level.GameState.cpp
-Z:\MyProjects\Joust\Joust\level.GameState.cpp(50,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  AI.FlyLeftState.cpp
+  AI.FlyRightState.cpp
+  Generating Code...
   Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe

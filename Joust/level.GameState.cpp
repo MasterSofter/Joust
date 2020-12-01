@@ -171,16 +171,19 @@ namespace level
 		//Удаление обьектов из списка gameObjects, которые попали в список destroedObjects;
 		for (auto it = levelPtr->destroedObjects.begin(); it != levelPtr->destroedObjects.end(); it++)
 		{
+			bool mayDelete = false;
 			auto elem = it;
 			for (auto jt = levelPtr->_gameObjects.begin(); jt != levelPtr->_gameObjects.end(); jt++)
 			{
 				if (*it == *jt)
 				{
+					mayDelete = true;
 					elem = jt;
 					break;
 				}
 			}
-			levelPtr->_gameObjects.erase(elem);
+			if(mayDelete)
+				levelPtr->_gameObjects.erase(elem);
 		}
 		//Очищаем список
 		levelPtr->destroedObjects.clear();

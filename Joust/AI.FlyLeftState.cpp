@@ -18,10 +18,10 @@ namespace AI
 		_enemyPtr->setVelocity(_enemyPtr->getVelocity() + sf::Vector2f(-1.2f, 0));
 		float deltaY = _enemyPtr->playergetPosition().y - _enemyPtr->getPosition().y;
 
-		if (_timeSwitchY >= 0.4f && deltaY > 0)
+		if (_timeSwitchY >= 0.1f && deltaY > 0)
 		{
 			_timeSwitchY = 0.f;
-			_enemyPtr->setVelocity(sf::Vector2f(_enemyPtr->getVelocity().x, -180));
+			_enemyPtr->setVelocity(sf::Vector2f(_enemyPtr->getVelocity().x, -60));
 
 			_enemyPtr->gameObject.setScale(sf::Vector2f(-1 / 7.f, 1));
 			_enemyPtr->animation.setCurrentImagePos(sf::Vector2u(5, 1));
@@ -29,10 +29,10 @@ namespace AI
 			_enemyPtr->animation.setSwitchTime(0.2f);
 			_enemyPtr->animation.Working = true;
 		}
-		else if (_timeSwitchY >= 0.4f && _enemyPtr->getPosition().y > 0)
+		else if (_timeSwitchY >= 0.1f )
 		{
 			_timeSwitchY = 0.f;
-			_enemyPtr->setVelocity(sf::Vector2f(_enemyPtr->getVelocity().x, -330));
+			_enemyPtr->setVelocity(sf::Vector2f(_enemyPtr->getVelocity().x, -230));
 
 			_enemyPtr->gameObject.setScale(sf::Vector2f(-1 / 7.f, 1));
 			_enemyPtr->animation.setCurrentImagePos(sf::Vector2u(5, 1));
