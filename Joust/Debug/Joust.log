@@ -1,5 +1,3 @@
 ﻿  level.GameState.cpp
-Z:\MyProjects\Joust\Joust\level.GameState.cpp(8,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  player.SpawnState.cpp
-  Generating Code...
+Z:\MyProjects\Joust\Joust\level.GameState.cpp(50,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Joust.vcxproj -> Z:\MyProjects\Joust\Debug\Joust.exe

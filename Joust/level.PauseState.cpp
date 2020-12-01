@@ -69,6 +69,7 @@ namespace level
 				{
 					//Выход в главное меню игры
 					_levelPtr->stateMachine->moveToState(STATE_NAME_EXIT);
+					Loaded = false;
 					return;
 				}
 			}

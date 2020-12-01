@@ -3,13 +3,52 @@
 
 namespace level
 {
+	ControlView::ControlView() {}
+	ControlView::ControlView(Level* level)
+	{
+		this->levelPtr = level;
+	}
+
+	PlayerLifesView::PlayerLifesView() {}
+	PlayerLifesView::PlayerLifesView(Level* level) : ControlView(level)
+	{
+		lastLifes = levelPtr->player->lifes;
+		float delta = 0;
+		for (int i = 0; i < levelPtr->player->lifes; i++)
+		{
+			GameObject* life = new GameObject("../data/textures/life.png");
+			life->setPosition(sf::Vector2f(190 + delta, 530));
+			life->gameObject.setScale(1 / 2.f, 1 / 2.5f);
+			life->Name = "Life";
+			life->DrawAble = true;
+			levelPtr->_gameObjects.push_back(life);
+			lifes[i] = life;
+
+			delta += life->gameObject.getSize().x / 2 + 12;
+		}
+	}
+
+	void PlayerLifesView::view()
+	{
+		if (levelPtr->player->lifes < lastLifes && levelPtr > 0)
+		{
+			for (auto it = levelPtr->_gameObjects.begin(); it != levelPtr->_gameObjects.end(); it++)
+			{
+				if (*it == lifes[lastLifes - 1])
+				{
+					levelPtr->destroedObjects.push_back(*it);
+					break;
+				}
+			}
+			lastLifes--;
+		}
+	}
+
 	GameManager::GameManager(Level* levelPtr)
 	{
+		playerLifesView = PlayerLifesView(levelPtr);
 		srand(time(NULL));
 		this->levelPtr = levelPtr;
-
-
-
 	}
 
 	int GameManager::random(int A, int B)
@@ -77,11 +116,10 @@ namespace level
 
 	void GameManager::updateEnemies()
 	{
-		if (countEnemies > 0 && spawnTimeEnemy > 12)
+		if (countEnemies > 0 && spawnTimeEnemy > 10)
 		{
 			spawnEnemy();
 			spawnTimeEnemy = 0;
-			countEnemies--;
 		}
 		spawnTimeEnemy += 0.04f;
 	}
@@ -98,6 +136,7 @@ namespace level
 			timeLoadLevel = 0;
 		}
 
+		playerLifesView.view();
 		showTextWave();
 		updateEnemies();
 		levelPtr->physics.Update(deltaTime);

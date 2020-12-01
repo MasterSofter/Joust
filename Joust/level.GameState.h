@@ -5,8 +5,37 @@
 #include <string.h>
 namespace level
 {
+	class ControlView
+	{
+	protected:
+		float updateTime = 16;
+		float currentTime = 0;
+		Level* levelPtr;
+	public:
+		ControlView();
+		ControlView(Level* level);
+		virtual void view() = 0;
+	};
+
+	class PlayerScoreView : public ControlView
+	{
+	public:
+		virtual void view();
+	};
+
+	class PlayerLifesView : public ControlView
+	{
+		int lastLifes;
+		GameObject* lifes[5];
+	public:
+		PlayerLifesView();
+		PlayerLifesView(Level* level);
+		virtual void view();
+	};
+
 	class GameManager
 	{
+		PlayerLifesView playerLifesView;
 		float spawnTimeEnemy = 0;
 		float timeLoadLevel = 0;	//Время загрузки уровня
 		int currentWave = 1;		//Текущая волна

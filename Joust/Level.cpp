@@ -121,6 +121,8 @@ namespace level
 
 
 			wnd->draw(*waveNumberText);
+			wnd->draw(menuPtr->gameObject);
+			wnd->draw(kursormenuPtr->gameObject);
 			wnd->draw(*textResumePtr);
 			wnd->draw(*textExitPtr);
 

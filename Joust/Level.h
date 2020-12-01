@@ -12,6 +12,7 @@ namespace level
 		GameObject*			player;
 		GameObject*			menuPtr;
 		GameObject*			kursormenuPtr;
+
 		sf::Text*			waveNumberText;	//“екст который будет выводитс€: Wave (номер волны)
 		sf::Text*			textResumePtr;
 		sf::Text*			textExitPtr;

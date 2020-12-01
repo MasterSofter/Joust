@@ -24,7 +24,6 @@ namespace level
 	void StateMachine::moveToState(sf::String stateName)
 	{
 		currentState = states[stateName];
-		currentState->Loaded = false;
 	}
 
 	void StateMachine::Update(float deltaTime)
